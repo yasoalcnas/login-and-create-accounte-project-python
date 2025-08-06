@@ -1,5 +1,6 @@
 # login-and-create-accounte-project-python
-#
+#The application has not been completed yet due to study and lack of time, but the project simulates the idea of logging in and #creating an account. It is a training idea only, and also (the idea of entering and extracting data is the idea of the project, i.e. #simulation with database rules).
+
 print(50 * "=")
 print("Hello")
 print("My Name app {Log in and create a virtual account in google}")
