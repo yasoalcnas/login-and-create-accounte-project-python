@@ -93,10 +93,11 @@ def create_account():
     print("Your age is: ", user_ask_age)
     print("")
     user_ask_sure = input(
-        "Are you sure you want to create this account? (yes = 1) or (no = 2): "
+        "Are you sure you want to create this account? (yes = 1) or (no = 2) : "
     )
     if user_ask_sure == "1":
         print("Account created successfully!")
+        add_account_storage()
         ask_create_or_login()
     if user_ask_sure == "2":
        quit()
@@ -126,14 +127,81 @@ def log_in():
     if storage_open_my_accont == storage_account["account_5"]:
         print("The data you entered is correct.")
 
+def delete_account():
+    user_ask_name_delete = input("Enter your name: ")
+    user_ask_password_delete = input("Enter your password: ")
+    user_ask_email_delete = input("Enter your email: ")
+    user_ask_phone_number_delete = input("Enter your phone number: ")
+    user_ask_age_delete = input("Enter your age: ")
+    storage_delete_my_accont = {
+        "name": user_ask_name_delete,
+        "password": user_ask_password_delete,
+        "email": user_ask_email_delete,
+        "phone_number": user_ask_phone_number_delete,
+        "age": user_ask_age_delete
+    }
+    if storage_delete_my_accont == storage_account["account_1"]:
+        print("The data you entered is correct.")
+        storage_account["account_1"]["name"] = " "
+        storage_account["account_1"]["password"] = " "
+        storage_account["account_1"]["email"] = " "
+        storage_account["account_1"]["phone_number"] = " "
+        storage_account["account_1"]["age"] = " "
+        commend_account_full[0] = False
+        print("Account deleted successfully!")
+        ask_create_or_login()
+    if storage_delete_my_accont == storage_account["account_2"]:
+        print("The data you entered is correct.")
+        storage_account["account_2"]["name"] = " "
+        storage_account["account_2"]["password"] = " "
+        storage_account["account_2"]["email"] = " "
+        storage_account["account_2"]["phone_number"] = " "
+        storage_account["account_2"]["age"] = " "
+        commend_account_full[1] = False
+        print("Account deleted successfully!")
+        ask_create_or_login()
+    if storage_delete_my_accont == storage_account["account_3"]:
+        print("The data you entered is correct.")
+        storage_account["account_3"]["name"] = " "
+        storage_account["account_3"]["password"] = " "
+        storage_account["account_3"]["email"] = " "
+        storage_account["account_3"]["phone_number"] = " "
+        storage_account["account_3"]["age"] = " "
+        commend_account_full[2] = False
+        print("Account deleted successfully!")
+        ask_create_or_login()
+    if storage_delete_my_accont == storage_account["account_4"]:
+        print("The data you entered is correct.")
+        storage_account["account_4"]["name"] = " "
+        storage_account["account_4"]["password"] = " "
+        storage_account["account_4"]["email"] = " "
+        storage_account["account_4"]["phone_number"] = " "
+        storage_account["account_4"]["age"] = " "
+        commend_account_full[3] = False
+        print("Account deleted successfully!")
+        ask_create_or_login()
+    if storage_delete_my_accont == storage_account["account_5"]:
+        print("The data you entered is correct.")
+        storage_account["account_5"]["name"] = " "
+        storage_account["account_5"]["password"] = " "
+        storage_account["account_5"]["email"] = " "
+        storage_account["account_5"]["phone_number"] = " "
+        storage_account["account_5"]["age"] = " "
+        commend_account_full[4] = False
+        print("Account deleted successfully!")
+        ask_create_or_login()
 
 def ask_create_or_login():
     user_ask_request = input(
-        "Do you want to (create account = 1) or (log in = 2) ?:  ")
+        "Do you want to (Create account = 1) or (Log in = 2) or (Delete = 3) or (Quit = 4) ?:  ")
     if user_ask_request == "1":
         create_account()
-    if user_ask_request == "2":
+    elif user_ask_request == "2":
         log_in()
+    elif user_ask_request == "3":
+        delete_account()
+    elif user_ask_request == "4":
+        quit()
 
 
 def add_account_storage():
